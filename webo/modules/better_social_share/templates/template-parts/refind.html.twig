@@ -1,0 +1,13 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Refind')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Refind'|t }}" data-link="https://refind.com/?url={{ entity_url }}%2F" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Refind'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <g fill="{{ icon_color|default('#fff') }}">
+                <path d="M16 21.256c-2.891 0-5.256-2.365-5.256-5.255 0-2.891 2.365-5.255 5.255-5.255 2.891 0 5.255 2.365 5.255 5.255.002 2.89-2.363 5.255-5.254 5.255z"></path>
+                <path d="M20.664 23.676A8.91 8.91 0 0 1 16 25c-4.95 0-9-4.05-9-9s4.05-9 9-9 9 4.05 9 9a8.912 8.912 0 0 1-1.302 4.628l2.293 1.991A11.908 11.908 0 0 0 28 16c0-6.6-5.4-12-12-12S4 9.4 4 16s5.4 12 12 12c2.456 0 4.745-.75 6.652-2.029l-1.988-2.295z"></path>
+            </g>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Refind'|t }}
+    </span>
+</a>

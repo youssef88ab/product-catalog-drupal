@@ -1,0 +1,5 @@
+name: 'Test Module'
+type: module
+description: 'A test module to verify configuration form visibility.'
+core_version_requirement: ^10
+package: Custom

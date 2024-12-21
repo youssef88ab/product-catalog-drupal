@@ -1,0 +1,11 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Bitty Browser')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Bitty Browser'|t }}" data-link="http://www.bitty.com/manual/?contenttype=&amp;contentvalue={{ entity_url }}%2F" href="javascript:void(0)">
+  <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Bitty Browser'|t }}">
+    <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+      <path fill="{{ icon_color|default('#fff') }}" d="M4 4h12v12H4z"></path>
+      <path fill="{{ icon_color|default('#fff') }}" d="M20 4v16H4v8h24V4"></path>
+    </svg>
+  </span>
+  <span class="social-media-share-label">
+    {{ 'Bitty Browser'|t }}
+  </span>
+</a>

@@ -1,0 +1,24 @@
+buttons_size: 32
+more_button: default
+custom_more_button: ''
+more_button_placement: after
+entities:
+  media: 1
+  node: 1
+  comment: 1
+social_share_platforms:
+  facebook:
+    enabled: 1
+    weight: 0
+  twitter:
+    enabled: 1
+    weight: 0
+  linkedin:
+    enabled: 1
+    weight: 0
+  pinterest:
+    enabled: 1
+    weight: 0
+  email:
+    enabled: 1
+    weight: 0

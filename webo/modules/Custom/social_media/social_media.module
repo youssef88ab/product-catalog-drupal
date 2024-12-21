@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function social_media_menu() {
+  $items = [];
+
+  $items['admin/config/system/social-media'] = [
+    'title' => 'Social Media Configuration',
+    'description' => 'Configure social media links and icons.',
+    'page callback' => 'webo\social_media\Form\SocialMediaConfigForm::class',
+    'access callback' => 'webo\Core\Access\AccessResult::allowed',
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}

@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Wykop')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Wykop'|t }}" data-link="https://www.wykop.pl/dodaj?url={{ entity_url }}%2F&amp;title={{ entity_title }}" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Wykop'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M23.54 3.5H8.46A4.96 4.96 0 0 0 3.5 8.46v15.08a4.96 4.96 0 0 0 4.96 4.96h15.08a4.96 4.96 0 0 0 4.96-4.96V8.46a4.96 4.96 0 0 0-4.96-4.96zM10.93 25.98L5 13.927l4.018-1.977 4.94 10.044 2.01-.988-4.94-10.043 4.016-1.977 4.942 10.043 2.01-.99L17.05 7.994l4.02-1.977L27 18.07l-16.07 7.91z"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Wykop'|t }}
+    </span>
+</a>

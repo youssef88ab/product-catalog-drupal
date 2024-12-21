@@ -1,0 +1,5 @@
+socializer.settings:
+  title: Socializer
+  description: 'Add URLs to your social media pages.'
+  parent: system.admin_config_system
+  route_name: socializer.settings

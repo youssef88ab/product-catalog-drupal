@@ -1,0 +1,474 @@
+<?php
+
+/**
+ * @file
+ * Handle Better Social Share.
+ */
+
+use Drupal\better_social_share\Form\BetterSocialShareSettingsForm;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function better_social_share_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.better_social_share':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Better Social Share Drupal module enhances website social sharing functionality of your website without third-party integrations. Unlike conventional modules, Better Social Share influence the native sharing methods provided by popular social media platforms, ensuring an ideal and efficient sharing experience for your users. With a comprehensive suite of customization options, smooth integration, and support for over 100 social media platforms, this module empowers you to effortlessly expand your reach and enhance your content across diverse online communities.') . '</p>';
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function better_social_share_theme() {
+  $modulePath = \Drupal::service('module_handler')->getModule('better_social_share')->getPath();
+  $close_icon = $modulePath . "/images/close.png";
+  $platforms = better_social_share_platforms();
+
+  return [
+    'better_social_share_standard' => [
+      'variables' => [
+        'entity_url' => FALSE,
+        'entity_title' => FALSE,
+        'buttons_size' => FALSE,
+        'more_button_type' => FALSE,
+        'button_image' => FALSE,
+        'btn_bg_color' => '',
+        'btn_type' => '',
+        'icon_color_type' => '',
+        'btn_border_round' => FALSE,
+        'btn_show_label' => FALSE,
+        'enable_button_spacing' => FALSE,
+        'buttons_label' => '',
+        'icon_color' => '#fff',
+        'more_button_placement' => FALSE,
+        'entity_type' => '',
+        'social_share_platforms' => '',
+        'bundle' => '',
+        'float' => 'none',
+        'top' => '',
+      ],
+    ],
+    'social_share_popup' => [
+      'variables' => [
+        'close_icon' => $close_icon,
+        'platforms' => $platforms,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function better_social_share_theme_suggestions_better_social_share_standard(array $variables) {
+  $suggestion = 'better_social_share_standard__';
+  $suggestions = [];
+
+  if (!empty($variables['entity_type'])) {
+    $suggestion .= $variables['entity_type'];
+    $suggestions[] = $suggestion;
+  }
+
+  if (!empty($variables['entity_type']) && !empty($variables['bundle'])) {
+    $suggestion .= '__' . $variables['bundle'];
+    $suggestions[] = $suggestion;
+  }
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function better_social_share_entity_extra_field_info() {
+  $extra = [];
+  $entityTypes = BetterSocialShareSettingsForm::getContentEntities();
+  $config = Drupal::config('better_social_share.settings');
+
+  // Allow modules to alter the entity types.
+  \Drupal::moduleHandler()->alter('better_social_share_entity_types', $entityTypes);
+
+  foreach ($entityTypes as $type) {
+    $entityTypeId = $type->id();
+    $isAllowed = $config->get("entities.{$entityTypeId}");
+    if ($isAllowed) {
+      $bundles = Drupal::service('entity_type.bundle.info')->getBundleInfo($entityTypeId);
+      foreach ($bundles as $bundle => $bundle_data) {
+        $extra[$entityTypeId][$bundle]['display']['better_social_share'] = [
+          'label' => t('Better Social Share'),
+          'description' => t('Share buttons by Better Social Share'),
+          'weight' => 50,
+          'visible' => TRUE,
+        ];
+      }
+    }
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function better_social_share_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  // Prevent error on preview of an unpublished node.
+  if ($entity->id() === NULL) {
+    return;
+  }
+
+  $display_component = FALSE;
+  if (better_social_share_entity_type_has_bundles($entity->getEntityTypeId())) {
+    // Node entity has bundles.
+    if ($display->getComponent('better_social_share')) {
+      $display_component = TRUE;
+    }
+  }
+  else {
+    $display_component = TRUE;
+    // Node entity does not have bundles.
+  }
+
+  if ($display_component) {
+    $config = Drupal::config('better_social_share.settings');
+    $isAllowed = $config->get("entities.{$entity->getEntityTypeId()}");
+    if ($isAllowed) {
+      $data = better_social_share_create_entity_data($entity);
+
+      // Get button type.
+      $btn_type = $data['btn_type'];
+      $btn_bg_color = $data['btn_bg_color'];
+      if (!in_array($btn_type, ['custom', 'transparent'])) {
+        $btn_bg_color = '';
+      }
+
+      $build['better_social_share'] = [
+        '#entity_url' => $data['entity_url'],
+        '#entity_title' => $data['entity_title'],
+        '#more_button_type' => $data['more_button_type'],
+        '#button_image' => $data['button_image'],
+        '#btn_bg_color' => $btn_bg_color,
+        '#btn_type' => $data['btn_type'],
+        '#icon_color_type' => $data['icon_color_type'],
+        '#icon_color' => $data['icon_color'],
+        '#btn_border_round' => $data['btn_border_round'],
+        '#btn_show_label' => $data['btn_show_label'],
+        '#enable_button_spacing' => $data['enable_button_spacing'],
+        '#buttons_label' => $data['buttons_label'],
+        '#more_button_placement' => $data['more_button_placement'],
+        '#social_share_platforms' => $data['social_share_platforms'],
+        '#buttons_size' => $data['buttons_size'],
+        '#entity_type' => $entity->getEntityType()->id(),
+        '#bundle' => $entity->bundle(),
+        '#theme' => 'better_social_share_standard',
+      ];
+
+      $url_options = [
+        'absolute' => TRUE,
+        'language' => \Drupal::languageManager()->getCurrentLanguage(),
+      ];
+      $base_url = Url::fromRoute('better_social_share.ajax', [], $url_options)->toString();
+
+      $build['#attached']['drupalSettings']['base_url'] = $base_url;
+      $build['#attached']['library'][] = 'better_social_share/better_social_share.front';
+
+    }
+  }
+}
+
+/**
+ * Generate data for BetterSocialShare buttons for an entity.
+ *
+ * @param \Drupal\Core\Entity\ContentEntityInterface $entity
+ *   The entity object to create the buttons for.
+ * @param object $config
+ *   If present this will be used as custom config data. Use NULL for default
+ *   config data.
+ *
+ * @return array
+ *   The array with url, title that will be sent to Twig.
+ */
+function better_social_share_create_entity_data(ContentEntityInterface $entity, $config = NULL) {
+  // If the entity is Paragraph, find the first parent that is Node.
+  while ($entity instanceof EntityInterface && $entity->getEntityTypeId() == 'paragraph') {
+    $entity = $entity->getParentEntity();
+  }
+
+  $url = $entity->toUrl('canonical', ['absolute' => TRUE])->toString() ?? NULL;
+  $title = $entity->label() ?? NULL;
+
+  return better_social_share_create_data($url, $title, $config);
+}
+
+/**
+ * Generate data for BetterSocialShare buttons.
+ *
+ * @param string $url
+ *   If present this will be used as the URL.
+ * @param string $title
+ *   If present this will be used as the title. Use an empty string for no title
+ *   or NULL to use the current page title.
+ * @param object $config
+ *   If present this will be used as custom config data. Use NULL for default
+ *   config data.
+ *
+ * @return array
+ *   The array with url, title that will be sent to Twig.
+ */
+function better_social_share_create_data($url = NULL, $title = NULL, $config = NULL) {
+  if (is_null($config)) {
+    $config = \Drupal::config('better_social_share.settings');
+  }
+
+  $more_button_placement = $config->get('more_button_placement');
+
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+
+  if ($is_front || is_null($url)) {
+    if ($is_front) {
+      // Use <front> for the front page URL without "/node".
+      $front_url = Url::fromRoute('<front>')->setAbsolute()->toString();
+      // Avoid "/node" in a front page URL.
+      $url = (is_null($url) || $url === $front_url . '/node') ? $front_url : $url;
+    }
+    // Use the current path if the URL is still NULL.
+    $url = (is_null($url)) ? Url::fromRoute('<current>')->setAbsolute()->toString() : $url;
+  }
+  else {
+    // Sanitize and encode URL for HTML output.
+    $url = UrlHelper::stripDangerousProtocols($url);
+  }
+
+  // Default to the current title if available, otherwise use the site name.
+  if (!isset($title)) {
+    $site_name = \Drupal::config('system.site')->get('name');
+
+    if ($is_front) {
+      $title = $site_name;
+    }
+    else {
+      $request = \Drupal::request();
+      $route_match = \Drupal::routeMatch();
+      $route_object = $route_match->getRouteObject();
+
+      if ($route_object !== NULL) {
+        $title = \Drupal::service('title_resolver')
+          ->getTitle($request, $route_object);
+      }
+
+      // Expecting array|string|null from getTitle.
+      if (is_array($title)) {
+        $title['#allowed_tags'] = [];
+        $title = \Drupal::service('renderer')->renderPlain($title);
+      }
+    }
+
+    $title = (empty($title)) ? $site_name : $title;
+  }
+
+  $buttons_size = $config->get('buttons_size');
+  $social_share_platforms = $config->get('social_share_platforms');
+
+  $social_platforms = better_social_share_platforms();
+  $default_weight = 0;
+
+  $platforms = [];
+
+  foreach ($social_platforms as $platform_id => $platform) {
+    $platforms[$platform_id]['weight'] = $social_share_platforms[$platform_id]['weight'] ?? $default_weight++;
+
+    $platforms[$platform_id]['enabled'] = $social_share_platforms[$platform_id]['enabled'] ?? 0;
+    $platforms[$platform_id]['key'] = $platform_id;
+  }
+
+  $platforms = array_filter($platforms, function ($platform) {
+      return $platform['enabled'] == 1;
+  });
+
+  $buttons_size = (
+    $buttons_size !== '32' && strlen($buttons_size) <= 3 && $buttons_size !== ''
+    && is_numeric($buttons_size) && intval($buttons_size) == $buttons_size && $buttons_size > 0
+  ) ? $buttons_size : '32';
+
+  $more_button_type = $config->get('more_button');
+  $btn_bg_color = $config->get('btn_bg_color');
+  $btn_type = $config->get('btn_type');
+  $icon_color_type = $config->get('icon_color_type');
+  $btn_border_round = $config->get('btn_border_round');
+  $btn_show_label = $config->get('btn_show_label');
+  $enable_button_spacing = $config->get('enable_button_spacing');
+  $buttons_label = $config->get('buttons_label');
+  $icon_color = $config->get('icon_color');
+
+  if ($more_button_type == 'custom') {
+    $button_image = UrlHelper::stripDangerousProtocols($config->get('custom_more_button'));
+  }
+
+  $info = [
+    'entity_url'                   => $url,
+    'entity_title'                 => $title,
+    'buttons_size'               => $buttons_size,
+    'social_share_platforms'               => $platforms,
+    'more_button_type'             => $more_button_type,
+    'button_image'               => $button_image ?? '',
+    'more_button_placement' => $more_button_placement,
+    'btn_bg_color' => $btn_bg_color,
+    'btn_type' => $btn_type,
+    'icon_color_type' => $icon_color_type,
+    'btn_border_round' => $btn_border_round,
+    'btn_show_label' => $btn_show_label,
+    'enable_button_spacing' => $enable_button_spacing,
+    'buttons_label' => $buttons_label,
+    'icon_color' => $icon_color,
+  ];
+
+  return $info;
+}
+
+/**
+ * Get all platforms.
+ */
+function better_social_share_platforms() {
+  $platforms = [
+    'facebook' => t('Facebook'),
+    'twitter' => t('Twitter'),
+    'linkedin' => t('Linkedin'),
+    'pinterest' => t('Pinterest'),
+    'teams' => t('Teams'),
+    'tumblr' => t('Tumblr'),
+    'reddit' => t('Reddit'),
+    'whatsapp' => t('Whatsapp'),
+    'snapchat' => t('Snapchat'),
+    'copy_link' => t('Copy Link'),
+    'facebook_messenger' => t('Facebook Messenger'),
+    'skype' => t('Skype'),
+    'sms' => t('SMS'),
+    'trello' => t('Trello'),
+    'viber' => t('Viber'),
+    'telegram' => t('Telegram'),
+    'email' => t('Email'),
+    'goodreads' => t('Goodreads'),
+    'google_bookmarks' => t('Google Bookmarks'),
+    'digg' => t('Digg'),
+    'printfriendly' => t('PrintFriendly'),
+    'print' => t('Print'),
+    'vk' => t('Vkontakte'),
+    'line' => t('Line'),
+    'baidu' => t('Baidu'),
+    'evernote' => t('Evernote'),
+    'mastodon' => t('Mastodon'),
+    'minds' => t('Minds'),
+    'x' => t('X'),
+    'google_translate' => t('Google Translate'),
+    'gettr' => t('Gettr'),
+    'parler' => t('Parler'),
+    'gab' => t('Gab'),
+    'mewe' => t('MeWe'),
+    'koo' => t('Koo'),
+    'douban' => t('Douban'),
+    'draugiem' => t('Draugiem'),
+    'google_classroom' => t('Google Classroom'),
+    'kik' => t('Kik'),
+    'papaly' => t('Papaly'),
+    'refind' => t('Refind'),
+    'threema' => t('Threema'),
+    'designfloat' => t('Float it'),
+    'gentlereader' => t('GentleReader'),
+    'wordPress' => t('WordPress'),
+    'diigo' => t('Diigo'),
+    'hacker_news' => t('Hacker News'),
+    'box' => t('Box.net'),
+    'aol' => t('AOL Mail'),
+    'yahoo' => t('Yahoo Mail'),
+    'instapaper' => t('Instapaper'),
+    'plurk' => t('Plurk'),
+    'aim' => t('AIM'),
+    'viadeo' => t('Viadeo'),
+    'pinboard' => t('Pinboard'),
+    'blogger' => t('Blogger Post'),
+    'typepad' => t('TypePad Post'),
+    'bufferapp' => t('Buffer'),
+    'flipboard' => t('Flipboard'),
+    'getpocket' => t('Pocket'),
+    'fark' => t('Fark'),
+    'fintel' => t('Fintel'),
+    'yummly' => t('Yummly'),
+    'app' => t('App.net'),
+    'symbaloo' => t('Symbaloo Feeds'),
+    'outlook' => t('Outlook.com'),
+    'balatarin' => t('Balatarin'),
+    'bibsonomy' => t('BibSonomy'),
+    'bitty' => t('Bitty Browser'),
+    'blinklist' => t('Blinklist'),
+    'blogmarks' => t('BlogMarks'),
+    'bookmarks_fr' => t('Bookmarks.fr'),
+    'buddymarks' => t('BuddyMarks'),
+    'care2' => t('Care2 News'),
+    'diary' => t('Diary.Ru'),
+    'folkd' => t('Folkd'),
+    'hatena' => t('Hatena'),
+    'jamespot' => t('Jamespot'),
+    'kakao' => t('Kakao'),
+    'kindle' => t('Kindle_It'),
+    'withknown' => t('Known'),
+    'livejournal' => t('LiveJournal'),
+    'mail_ru' => t('Mail.Ru'),
+    'mendeley' => t('Mendeley'),
+    'meneame' => t('Meneame'),
+    'mix' => t('Mix'),
+    'mixi' => t('Mixi'),
+    'myspace' => t('MySpace'),
+    'netvouz' => t('Netvouz'),
+    'odnoklassniki' => t('Odnoklassniki'),
+    'protopage' => t('Protopage Bookmarks'),
+    'pusha' => t('Pusha'),
+    'qzone' => t('Qzone'),
+    'renren' => t('Renren'),
+    'weibo' => t('Sina Weibo'),
+    'sitejot' => t('SiteJot'),
+    'slashdot' => t('Slashdot'),
+    'stocktwits' => t('StockTwits'),
+    'svejo' => t('Svejo'),
+    'tuenti' => t('Tuenti'),
+    'twiddla' => t('Twiddla'),
+    'webnews' => t('Webnews'),
+    'wykop' => t('Wykop'),
+    'xing' => t('Xing'),
+    'yoolink' => t('Yoolink'),
+    'truthsocial' => t('Truth Social'),
+    'nextdoor' => t('Nextdoor'),
+  ];
+
+  return $platforms;
+}
+
+/**
+ * Check if an entity type has bundles.
+ *
+ * @param string $entity_type_id
+ *   The entity type ID.
+ *
+ * @return bool
+ *   TRUE if the entity type has bundles, FALSE otherwise.
+ */
+function better_social_share_entity_type_has_bundles($entity_type_id) {
+  /** @var \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager */
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+
+  // Get the entity type definition.
+  $entity_type = $entity_type_manager->getDefinition($entity_type_id);
+
+  // Check if the entity type implements EntityTypeInterface and has bundles.
+  return $entity_type instanceof EntityTypeInterface && $entity_type->hasKey('bundle');
+}

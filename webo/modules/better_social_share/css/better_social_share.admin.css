@@ -1,0 +1,16 @@
+.better_social_share-entity-checkbox ~ .description {
+  display: inline;
+}
+
+.better_social_share-entity-checkbox ~ .description a {
+  margin: 0 3px;
+  white-space: nowrap;
+}
+
+.better_social_share-round-icon {
+  border-radius: 14%;
+}
+
+.better_social_share-universal-button-option img {
+  vertical-align: middle;
+}

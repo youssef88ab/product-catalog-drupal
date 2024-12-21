@@ -1,0 +1,10 @@
+name: Video Filter Example
+type: module
+description: Video Filter integration example module.
+package: Text filters
+core_version_requirement: ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2023-05-07
+version: '8.x-1.2'
+project: 'video_filter'
+datestamp: 1683483487

@@ -1,0 +1,12 @@
+name: Footermap
+type: module
+description: Recursively generates and displays basic site map of non-hidden menu items in block instances that may be placed in the footer.
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:menu_ui
+tags: menu
+
+# Information added by Drupal.org packaging script on 2024-07-17
+version: '8.x-1.9'
+project: 'footermap'
+datestamp: 1721225113

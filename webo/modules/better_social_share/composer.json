@@ -1,0 +1,14 @@
+{
+    "name": "drupal/better_social_share",
+    "type": "drupal-module",
+    "description": "Better social share",
+    "keywords": ["Drupal"],
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/better_social_share",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/better_social_share",
+        "source": "https://git.drupalcode.org/project/better_social_share"
+    },
+    "require": {}
+}

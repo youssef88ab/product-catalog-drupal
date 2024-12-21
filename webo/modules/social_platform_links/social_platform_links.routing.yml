@@ -1,0 +1,7 @@
+social_platform_links.page:
+  path: '/social-platform-links'
+  defaults:
+    _controller: '\Drupal\social_platform_links\Controller\SocialPlatformLinksController::socialPlatformLinksPage'
+    _title: 'Social Platform Links'
+  requirements:
+    _permission: 'access content'

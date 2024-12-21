@@ -1,0 +1,9 @@
+{% set classes = [
+  'socializer',
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% for link in links %}
+    {{ link }}
+  {% endfor %}
+</div>

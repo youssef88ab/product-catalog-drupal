@@ -1,0 +1,5 @@
+# Permissions for the better_social_share module
+'administer better_social_share':
+  title: 'Administer Better Social Share'
+  description: 'Perform administration tasks for the Better Social Share module.'
+  restrict access: TRUE

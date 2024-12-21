@@ -1,0 +1,16 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Balatarin')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Balatarin'|t }}" data-link="https://www.balatarin.com/login" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Balatarin'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="#B90E10" d="M29 17H3v10c0 1.1.9 2 2 2h22c1.1 0 2-.9 2-2V17z"></path>
+            <path fill="{{ icon_color|default('#fff') }}" d="M12 22h8v2h-8z"></path>
+            <path fill="#079948" d="M29 15H3V5c0-1.1.9-2 2-2h22c1.1 0 2 .9 2 2v10z"></path>
+            <g fill="{{ icon_color|default('#fff') }}">
+                <path d="M15 5h2v8h-2z"></path>
+                <path d="M12 8h8v2h-8z"></path>
+            </g>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Balatarin'|t }}
+    </span>
+</a>

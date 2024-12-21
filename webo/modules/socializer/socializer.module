@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Module file for Socializer.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function socializer_theme() {
+  return [
+    'socializer' => [
+      'variables' => [
+        'links' => [],
+      ],
+      'template' => 'socializer',
+    ],
+  ];
+}

@@ -1,0 +1,8 @@
+name: 'Mon Thème'
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: false
+description: 'Un thème personnalisé pour mon site Drupal.'
+package: Custom
+version: VERSION
+core: 9.x

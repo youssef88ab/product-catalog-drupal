@@ -1,0 +1,7 @@
+webo_social.settings:
+    path: '/admin/config/system/social-media-settings'
+    defaults:
+      _form: '\Drupal\webo_social\Form\SocialMediaConfigForm'
+      _title: 'Social Media Settings'
+    requirements:
+      _permission: 'administer site configuration'

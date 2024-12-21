@@ -1,0 +1,35 @@
+display_options:
+  show_icon: true
+  show_label: false
+  target_blank: true
+platforms:
+
+  facebook:
+    label: 'Facebook'
+    url: null
+    weight: 0
+
+  youtube:
+    label: 'Youtube'
+    url: null
+    weight: 1
+
+  linkedin:
+    label: 'Linkedin'
+    url: null
+    weight: 2
+
+  x:
+    label: 'X'
+    url: null
+    weight: 3
+
+  instagram:
+    label: 'Instagram'
+    url: null
+    weight: 4
+
+  pinterest:
+    label: 'Pinterest'
+    url: null
+    weight: 5

@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Image Hover Effects module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_help().
+ */
+function image_hover_effects_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.image_hover_effects':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides private entity fields functionality.') . '</p>';
+      $output .= '<p>' . t('The hover effect option is added to the field formatter of the core Image field. Since it only makes sense to have a hover effect on an image that is a link, the styling depends on a link being wrapped around the image.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function image_hover_effects_theme($existing, $type, $theme, $path) {
+  return [
+    'image_hover_effects_image_formatter' => [
+      'variables' => [
+        'item' => NULL,
+        'item_attributes' => NULL,
+        'url' => NULL,
+        'image_style' => NULL,
+        'link_attributes' => NULL,
+      ],
+    ],
+    'image_hover_effects_responsive_image_formatter' => [
+      'variables' => [
+        'item' => NULL,
+        'item_attributes' => NULL,
+        'url' => NULL,
+        'responsive_image_style_id' => NULL,
+        'link_attributes' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for image formatter templates.
+ */
+function template_preprocess_image_hover_effects_image_formatter(&$variables) {
+  \Drupal::moduleHandler()->loadInclude('image', 'inc', 'image.field');
+  template_preprocess_image_formatter($variables);
+  $variables['link_attributes'] = new Attribute($variables['link_attributes']);
+}
+
+/**
+ * Prepares variables for responsive image formatter templates.
+ */
+function template_preprocess_image_hover_effects_responsive_image_formatter(&$variables) {
+  template_preprocess_responsive_image_formatter($variables);
+  $variables['link_attributes'] = new Attribute($variables['link_attributes']);
+}

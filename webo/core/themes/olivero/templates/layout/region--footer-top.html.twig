@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Olivero's theme override to display the footer top region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{%
+  set classes = [
+    'region',
+    'region--' ~ region|clean_class,
+    'grid-full',
+    'layout--pass--content-medium',
+  ]
+%}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="region--{{ region }}__inner">
+      {{ content }}
+    </div>
+  </div>
+{% endif %}
+
+<footer style="background-color: #0f1214; color: white; padding: 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; padding: 20px;">
+    <div style="flex: 1; min-width: 200px; padding: 0 10px;">
+      <h3 style="color: white;">Company</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li><a href="#" style="color: white;">Home</a></li>
+        <li><a href="#" style="color: white;">Products</a></li>
+        <li><a href="multimedia-listing" style="color: white;">Multimedia</a></li>
+        <li><a href="About" style="color: white;">About Us</a></li>
+        <li><a href="maison-listing" style="color: white;">Maisons</a></li>
+        <li><a href="voiture-listing" style="color: white;">Voitures</a></li>
+        <li><a href="#" style="color: white;">Careers</a></li>
+        <li><a href="#" style="color: white;">Press</a></li>
+      </ul>
+    </div>
+
+    <div style="flex: 1; min-width: 200px; padding: 0 10px;">
+      <h3 style="color: white;">Legal</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li><a href="#" style="color: white;">Privacy Policy</a></li>
+        <li><a href="#" style="color: white;">Terms of Service</a></li>
+        <li><a href="#" style="color: white;">Manage Cookies</a></li>
+      </ul>
+    </div>
+
+    <div style="flex: 1; min-width: 200px; padding: 0 10px;">
+      <h3 style="color: white;">Customer Service</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li><a href="#" style="color: white;">FAQs</a></li>
+        <li><a href="#" style="color: white;">Support Center</a></li>
+        <li><a href="#" style="color: white;">Returns & Exchanges</a></li>
+      </ul>
+    </div>
+
+    <div style="flex: 1; min-width: 200px; padding: 0 10px;">
+      <h3 style="color: white;">Contact Us</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="color: white;">+212 636 202 710</li>
+        <li style="color: white;">yousef@gmail.com</li>
+      </ul>
+    </div>
+
+    <div style="flex: 1; min-width: 200px; padding: 0 10px;">
+      <h3 style="color: white;">Follow Us</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li><a href="https://www.facebook.com/OfficialFPL" style="color: white;">Facebook</a></li>
+        <li><a href="https://x.com/premierleague?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" style="color: white;">Twitter</a></li>
+        <li><a href="https://www.instagram.com/premierleague/?hl=en" style="color: white;">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/the-premier-league/?originalSubdomain=uk" style="color: white;">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+

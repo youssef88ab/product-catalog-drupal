@@ -1,0 +1,3 @@
+administer socializer configuration:
+  title: 'Administer Socializer configuration'
+  restrict access: TRUE

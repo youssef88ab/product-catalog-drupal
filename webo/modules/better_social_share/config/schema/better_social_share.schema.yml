@@ -1,0 +1,22 @@
+# Schema file for the configuration files of the better_social_share module.
+better_social_share.settings:
+  type: config_object
+  label: 'BetterSocialShare Settings'
+  mapping:
+    buttons_size:
+      type: integer
+    more_button:
+      type: string
+      label: 'More Button Type'
+    custom_more_button:
+      type: uri
+      lable: 'Custom button URL'
+    more_button_placement:
+      type: string
+      label: 'More Button Placement'
+    entities:
+      type: sequence
+      label: 'Entities'
+      sequence:
+        type: integer
+        label: 'Status'

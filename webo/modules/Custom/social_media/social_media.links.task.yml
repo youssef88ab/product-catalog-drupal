@@ -1,0 +1,4 @@
+social.admin_settings_tab:
+  route_name: social.admin_settings
+  title: Settings
+  base_route: social.admin_settings

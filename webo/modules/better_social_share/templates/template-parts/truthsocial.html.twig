@@ -1,0 +1,11 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Truth Social')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Truth Social'|t }}" data-link="https://truthsocial.com/share?text={{ entity_title }}&amp;url=https%253A%252F%252Fwww.heateor.com%252Fsassy-social-share-demo%252F" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Truth Social'|t }}">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 400 400">
+            <path d="M73.200 134.000 L 73.200 161.600 104.800 161.600 L 136.400 161.600 136.400 134.000 L 136.400 106.400 104.800 106.400 L 73.200 106.400 73.200 134.000 M162.800 209.802 L 162.800 313.205 195.700 313.102 L 228.600 313.000 228.699 237.800 C 228.791 167.661,228.843 162.566,229.475 162.100 C 230.008 161.707,239.566 161.600,274.076 161.600 L 318.000 161.600 318.000 134.000 L 318.000 106.400 240.400 106.400 L 162.800 106.400 162.800 209.802" stroke="none" fill="{{ icon_color|default('#fff') }}"></path>
+            <path d="M282.800 257.880 L 255.400 258.005 254.709 258.903 C 253.617 260.320,253.629 311.940,254.721 312.929 C 255.375 313.520,258.341 313.584,286.221 313.610 L 317.000 313.639 317.700 312.775 C 318.687 311.557,318.790 260.735,317.809 259.334 C 316.693 257.741,316.320 257.726,282.800 257.880" stroke="none" fill="{{ icon_color|default('#fff') }}"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Truth Social'|t }}
+    </span>
+</a>

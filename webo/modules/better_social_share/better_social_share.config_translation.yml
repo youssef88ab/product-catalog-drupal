@@ -1,0 +1,5 @@
+better_social_share.settings:
+  title: 'Better Social Share Settings'
+  base_route_name: better_social_share.admin_settings
+  names:
+    - better_social_share.settings

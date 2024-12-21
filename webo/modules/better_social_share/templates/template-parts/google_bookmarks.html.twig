@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Google Bookmarks')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Google Bookmarks'|t }}" data-link="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk={{ entity_url }}%2F&amp;title={{ entity_title }}" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Google Bookmarks'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-12 0 100 100">
+            <path d="M 51.22877660575707 38.19080770219705 A 17 17 0 1 0 56 50.00000000000001 h -17" stroke="#fff" stroke-width="8" fill="none"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Google Bookmarks'|t }}
+    </span>
+</a>

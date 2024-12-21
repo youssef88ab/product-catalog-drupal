@@ -1,0 +1,8 @@
+name: 'Social Media'
+type: module
+description: 'A module to add social media links and icons configuration.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:system
+

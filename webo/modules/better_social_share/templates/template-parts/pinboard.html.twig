@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Pinboard')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Pinboard'|t }}" data-link="https://pinboard.in/add?url={{ entity_url }}%2F&amp;title={{ entity_title }}" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Pinboard'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M17.357 18.913l-5.01 5.014.88-4.5-6.588-8.075-3.48.044 4.314-4.313 4.035-4.04V6.85l7.795 6.403 4.502-.786-4.876 4.87 9.908 11.62"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Pinboard'|t }}
+    </span>
+</a>

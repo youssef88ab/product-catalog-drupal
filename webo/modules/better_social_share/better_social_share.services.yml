@@ -1,0 +1,6 @@
+# better_social_share/better_social_share.services.yml
+services:
+  better_social_share.twig_extension:
+    class: Drupal\better_social_share\TwigExtension\FileExistsExtension
+    tags:
+      - { name: twig.extension }

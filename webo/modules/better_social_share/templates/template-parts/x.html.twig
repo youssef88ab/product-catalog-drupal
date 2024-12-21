@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('X')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'X'|t }}" data-link="https://twitter.com/intent/tweet?text={{ entity_title }}&url= {{ entity_url }}%2F" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'X'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M21.751 7h3.067l-6.7 7.658L26 25.078h-6.172l-4.833-6.32-5.531 6.32h-3.07l7.167-8.19L6 7h6.328l4.37 5.777L21.75 7Zm-1.076 16.242h1.7L11.404 8.74H9.58l11.094 14.503Z"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'X'|t }}
+    </span>
+</a>

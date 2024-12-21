@@ -1,0 +1,827 @@
+#better-social-share_sharing_more_content .better-social-share-all-services ul {
+    margin: 10px 15px;
+    overflow: hidden;
+    list-style: none;
+    padding-left: 0!important;
+    position: static!important;
+    width: auto!important
+}
+
+#better-social-share_sharing_more_content .better-social-share-all-services ul li {
+    margin: 0;
+    background: 0 0!important;
+    float: left;
+    width: 33.3333%!important;
+    text-align: left!important;
+    padding: 5px
+}
+
+#better-social-share_sharing_popup_close img {
+    opacity: 1!important;
+    background: 0 0!important;
+    border: 0!important;
+    outline: 0!important;
+    box-shadow: none!important;
+    top: inherit!important;
+    right: inherit!important;
+    left: 9px!important;
+    padding: 0!important;
+    width: 34px
+}
+
+#better-social-share_sharing_more_providers {
+    position: fixed;
+    top: 50%;
+    left: 47%;
+    background: #fafafa;
+    width: 650px;
+    margin: -180px 0 0-300px;
+    z-index: 10000000;
+    text-shadow: none!important;
+    height: 308px
+}
+
+#better-social-share_sharing_more_providers .title {
+    font-size: 14px!important;
+    height: auto!important;
+    background: #58b8f8!important;
+    border-bottom: 1px solid #d7d7d7!important;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: inherit;
+    line-height: 34px!important;
+    padding: 0!important;
+    text-align: center;
+    text-transform: none;
+    margin: 0!important;
+    text-shadow: none!important;
+    width: 100%
+}
+
+#better-social-share_sharing_more_providers * {
+    font-family: Arial,Helvetica,sans-serif
+}
+
+#better-social-share_sharing_more_providers #better-social-share_sharing_more_content {
+    background: #fafafa;
+    border-radius: 4px;
+    color: #555;
+    height: auto;
+    width: 100%
+}
+
+#better-social-share_sharing_more_providers .better-social-share-filter {
+    margin: 0;
+    padding: 25px 0 10px;
+    position: relative;
+    width: 100%
+}
+
+#better-social-share_sharing_more_providers .better-social-share-all-services {
+    clear: both;
+    height: 264px;
+    overflow: auto
+}
+
+#better-social-share_sharing_more_providers .close-button img {
+    margin: 0
+}
+
+#better-social-share_sharing_more_providers .close-button {
+    background: 0 0!important;
+    border: 0!important;
+    box-shadow: none!important;
+    z-index: 1000;
+    height: auto!important;
+    width: auto!important;
+    left: auto!important;
+    display: block!important;
+    color: #555!important;
+    cursor: pointer!important;
+    font-size: 29px!important;
+    line-height: 29px!important;
+    margin: 0!important;
+    padding: 0!important;
+    position: absolute;
+    right: -13px;
+    top: -11px
+}
+
+#better-social-share_sharing_more_providers .better-social-share-filter input.social-share-search {
+    width: 92%;
+    display: block;
+    float: none;
+    font-family: "open sans","helvetica neue",helvetica,arial,sans-serif;
+    font-weight: 300;
+    height: 40px;
+    line-height: inherit;
+    margin: 0 auto;
+    padding: 5px 8px 5px 10px;
+    border: 1px solid #ccc!important;
+    color: #000;
+    background: #fff!important;
+    font-size: 16px!important;
+    text-align: left!important;
+    border-radius: 6px
+}
+
+#better-social-share_sharing_more_providers .footer-panel {
+    background: #fff;
+    border-top: 1px solid #d7d7d7;
+    padding: 6px 0;
+    width: 100%;
+    color: #fff
+}
+
+#better-social-share_sharing_more_providers .footer-panel p {
+    background-color: transparent;
+    top: 0;
+    text-align: left!important;
+    color: #000;
+    font-family: "helvetica neue",arial,helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 0!important;
+    padding: 0 6px!important;
+    text-indent: 0!important
+}
+
+#better-social-share_sharing_more_providers .footer-panel a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    text-indent: 0!important
+}
+
+#better-social-share_sharing_more_providers .better-social-share-all-services ul li a span {
+    width: 51%;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px rgb(0 0 0/.18);
+    display: block;
+    float: left
+}
+
+#better-social-share_sharing_more_providers .better-social-share-all-services ul li a span svg {
+    vertical-align: inherit
+}
+
+#better-social-share_sharing_more_providers .better-social-share-all-services ul li a:hover {
+    color: #2a2a2a;
+    text-decoration: none;
+    filter: brightness(92%)
+}
+
+#better-social-share_sharing_more_providers .better-social-share-all-services ul li a {
+    text-align: center;
+    border-radius: 3px;
+    color: #666;
+    display: block;
+    font-size: 18px;
+    height: initial;
+    line-height: 28px;
+    overflow: hidden;
+    padding: 8px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 0;
+    text-indent: 0;
+    text-shadow: none
+}
+
+@media screen and (max-width:783px) {
+    #better-social-share_sharing_more_providers {
+        width: 80%;
+        left: 60%;
+        margin-left: -50%;
+        text-shadow: none!important
+    }
+
+    #better-social-share_sharing_more_providers .better-social-share-filter input.social-share-search {
+        border: 1px solid #ccc;
+        width: 92%
+    }
+}
+
+@media screen and (max-width:475px) {
+    #better-social-share_sharing_more_content .better-social-share-all-services ul li {
+        width: 100%!important
+    }
+}
+
+.social-media-share-label {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    line-height: 24px;
+    color: #fff
+}
+
+.social-share-btns .social-media-share-label {
+    display: none
+}
+
+.social-media-show-label.social-share-btns .social-media-share-label {
+    display: block
+}
+
+.social-share-btns a {
+    padding: .2em;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none
+}
+
+.better-social-share-popup {
+    position: fixed;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 10001
+}
+
+.better-social-share-popup.active {
+    top: 0;
+    background-color: rgba(3,3,3,.75);
+    transition: background-color .6s,opacity .6s
+}
+
+.better-social-share-popup .better-social-share-popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 568px;
+    min-width: 320px;
+    margin-top: 150px;
+    background-color: ivory;
+    color: #070000;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transition: margin .6s;
+    -webkit-transition: margin .6s;
+    -moz-transition: margin .6s;
+    -o-transition: margin .6s
+}
+
+.better-social-share-popup.active .better-social-share-popup-content {
+    margin-top: 0
+}
+
+.better-social-share-popup .fade-out {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    text-align: center;
+    font-size: 15px
+}
+
+.share-wrap {
+    position: absolute;
+    display: inline-table;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    text-align: center
+}
+
+.round-border a.popup-trigger,.round-border a.social-link {
+    border-radius: .3em
+}
+
+.round-border a.popup-trigger,.round-border a.social-link,.social-media-spacing a.popup-trigger,.social-media-spacing a.social-link {
+    margin: 0 2px
+}
+
+.social-share-btns a.popup-trigger,.social-share-btns a.social-link,.social-share-float-wrapper .social-share-btns a.popup-trigger,.social-share-float-wrapper .social-share-btns a.social-link {
+    margin-top: 2px
+}
+
+.social-share-btns {
+    margin: 10px 0
+}
+
+.social-share-float-wrapper-left {
+    position: fixed;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 99999999
+}
+
+.social-share-float-wrapper-right {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 99999999
+}
+
+.social-share-float-left {
+    display: flex;
+    flex-direction: column;
+    z-index: 99999999;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.social-share-float-left a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #333
+}
+.social-share-float-left a:hover {
+    filter: brightness(92%)
+}
+
+.social-share-float-wrapper.top-25 {
+    top: 25%
+}
+
+.social-share-float-wrapper.top-50 {
+    top: 50%
+}
+
+.social-share-float-wrapper.top-75 {
+    top: 70%
+}
+
+@media screen and (max-width:767px) {
+    .social-share-float-wrapper {
+        position: fixed;
+        top: auto !important;
+        bottom: 0;
+        transform: translateY(0);
+        text-align: center;
+        width: 100%
+    }
+
+    .social-share-float-left {
+        flex-direction: row
+    }
+
+    .social-share-float-left a {
+        margin-bottom: 0
+    }
+
+    .social-share-float-wrapper .social-share-btns a {
+        padding: 0
+    }
+}
+
+.social-share-float-wrapper .round-border a.popup-trigger,.social-share-float-wrapper .round-border a.social-link,.social-share-float-wrapper .social-media-spacing a.popup-trigger,.social-share-float-wrapper .social-media-spacing a.social-link {
+    margin: 0;
+    display: inline-flex;
+    align-items: center
+}
+
+.social-share-float-wrapper a.popup-trigger {
+    justify-content: center
+}
+
+.social-share-float-wrapper .social-share-btns {
+    margin: 0
+}
+
+.social-link-more {
+    background-color: #0166ff
+}
+
+.social-link-facebook {
+    background-color: #3b5998
+}
+
+.social-link-aim {
+    background-color: #ffd900
+}
+
+.social-link-aol {
+    background-color: #ff0b00
+}
+
+.social-link-app {
+    background-color: #000
+}
+
+.social-link-baidu {
+    background-color: #2319dc
+}
+
+.social-link-balatarin {
+    background-color: #0bda51
+}
+
+.social-link-bibsonomy {
+    background-color: #2a9fed
+}
+
+.social-link-bitty {
+    background-color: #e69900
+}
+
+.social-link-blinklist {
+    background-color: #00a0f0
+}
+
+.social-link-blogger {
+    background-color: #f57d00
+}
+
+.social-link-blogmarks {
+    background-color: #0594b9
+}
+
+.social-link-bookmarks_fr {
+    background-color: #ff8d00
+}
+
+.social-link-box {
+    background-color: #0af
+}
+
+.social-link-buddymarks {
+    background-color: #eb6b20
+}
+
+.social-link-bufferapp {
+    background-color: #323b43
+}
+
+.social-link-care2 {
+    background-color: #8dbf42
+}
+
+.social-link-copy_link {
+    background-color: #ff7f19
+}
+
+.social-link-designfloat {
+    background-color: #3a5898
+}
+
+.social-link-diary {
+    background-color: #c9f
+}
+
+.social-link-digg {
+    background-color: #000
+}
+
+.social-link-diigo {
+    background-color: #5784c1
+}
+
+.social-link-douban {
+    background-color: #072
+}
+
+.social-link-draugiem {
+    background-color: #0076cc
+}
+
+.social-link-email {
+    background-color: #4682b4
+}
+
+.social-link-evernote {
+    background-color: #2dbe60
+}
+
+.social-link-facebook_messenger {
+    background-color: #0084ff
+}
+
+.social-link-nextdoor {
+    background-color: #8ED500
+}
+
+.social-link-fark {
+    background-color: #06c
+}
+
+.social-link-fintel {
+    background-color: #5d8aa8
+}
+
+.social-link-flipboard {
+    background-color: #e12828
+}
+
+.social-link-folkd {
+    background-color: #4caf50
+}
+
+.social-link-gab {
+    background-color: #3d3d3d
+}
+
+.social-link-gentlereader {
+    background-color: #3b5998
+}
+
+.social-link-getpocket {
+    background-color: #ef4056
+}
+
+.social-link-gettr {
+    background-color: #00b2ff
+}
+
+.social-link-goodreads {
+    background-color: #553b08
+}
+
+.social-link-google_bookmarks {
+    background-color: #4d90fe
+}
+
+.social-link-google_classroom {
+    background-color: #34a853
+}
+
+.social-link-google_translate {
+    background-color: #4285f4
+}
+
+.social-link-hacker_news {
+    background-color: #f60
+}
+
+.social-link-hatena {
+    background-color: #00a4de
+}
+
+.social-link-instapaper {
+    background-color: #000
+}
+
+.social-link-jamespot {
+    background-color: #7b3291
+}
+
+.social-link-kakao {
+    background-color: #ffdf00
+}
+
+.social-link-kik {
+    background-color: #82d364
+}
+
+.social-link-kindle {
+    background-color: #f58220
+}
+
+.social-link-koo {
+    background-color: #1da1f2
+}
+
+.social-link-line {
+    background-color: #00b900
+}
+
+.social-link-linkedin {
+    background-color: #0077b5
+}
+
+.social-link-livejournal {
+    background-color: #00a0d1
+}
+
+.social-link-mail_ru {
+    background-color: #168de2
+}
+
+.social-link-mastodon {
+    background-color: #3088d4
+}
+
+.social-link-mendeley {
+    background-color: #a36a00
+}
+
+.social-link-meneame {
+    background-color: #fc0
+}
+
+.social-link-mewe {
+    background-color: #d3d3d3
+}
+
+.social-link-minds,.social-link-mix {
+    background-color: #f60
+}
+
+.social-link-mixi {
+    background-color: #00a0de
+}
+
+.social-link-myspace {
+    background-color: #000
+}
+
+.social-link-netvouz {
+    background-color: #ff9c00
+}
+
+.social-link-odnoklassniki {
+    background-color: #ed812b
+}
+
+.social-link-outlook {
+    background-color: #0072c6
+}
+
+.social-link-papaly {
+    background-color: #424242
+}
+
+.social-link-parler {
+    background-color: #00a2f2
+}
+
+.social-link-pinboard {
+    background-color: #000
+}
+
+.social-link-pinterest {
+    background-color: #bd081c
+}
+
+.social-link-plurk {
+    background-color: #f70
+}
+
+.social-link-printfriendly {
+    background-color: #4ba44e
+}
+
+.social-link-print,a.social-link.copy-link {
+    background-color: #007bff
+}
+
+.social-link-protopage {
+    background-color: #60c
+}
+
+.social-link-pusha {
+    background-color: #000
+}
+
+.social-link-qzone {
+    background-color: orange
+}
+
+.social-link-reddit {
+    background-color: #ff4500
+}
+
+.social-link-refind {
+    background-color: #f50
+}
+
+.social-link-renren {
+    background-color: #217dc6
+}
+
+.social-link-sitejot {
+    background-color: #333
+}
+
+.social-link-skype {
+    background-color: #00aff0
+}
+
+.social-link-slashdot {
+    background-color: #000
+}
+
+.social-link-sms {
+    background-color: #4caf50
+}
+
+.social-link-snapchat {
+    background-color: #fffc00
+}
+
+.social-link-stocktwits {
+    background-color: #1366da
+}
+
+.social-link-svejo {
+    background-color: #f60
+}
+
+.social-link-symbaloo {
+    background-color: #ff8000
+}
+
+.social-link-teams {
+    background-color: #6264a7
+}
+
+.social-link-telegram {
+    background-color: #08c
+}
+
+.social-link-threema {
+    background-color: #61b54a
+}
+
+.social-link-trello {
+    background-color: #0079bf
+}
+
+.social-link-truthsocial {
+    background-color: #00aeef
+}
+
+.social-link-tuenti {
+    background-color: #f50
+}
+
+.social-link-tumblr {
+    background-color: #36465d
+}
+
+.social-link-twiddla {
+    background-color: #ff6f61
+}
+
+.social-link-twitter {
+    background-color: #1da1f2
+}
+
+.social-link-typepad {
+    background-color: #d54600
+}
+
+.social-link-viadeo {
+    background-color: #f07355
+}
+
+.social-link-viber {
+    background-color: #665cac
+}
+
+.social-link-vk {
+    background-color: #45668e
+}
+
+.social-link-webnews {
+    background-color: #3b5998
+}
+
+.social-link-weibo {
+    background-color: #df2029
+}
+
+.social-link-whatsapp {
+    background-color: #25d366
+}
+
+.social-link-withknown {
+    background-color: #009688
+}
+
+.social-link-wordPress {
+    background-color: #21759b
+}
+
+.social-link-wykop {
+    background-color: #39f
+}
+
+.social-link-x {
+    background-color: #000
+}
+
+.social-link-xing {
+    background-color: #026466
+}
+
+.social-link-yahoo {
+    background-color: #7b0099
+}
+
+.social-link-yoolink {
+    background-color: #0077b5
+}
+
+.social-link-yummly {
+    background-color: #e16120
+}
+
+.social-share-btns a.social-link:hover {
+    filter: brightness(92%)
+}
+
+.transparent-bg {
+    background: 0 0
+}

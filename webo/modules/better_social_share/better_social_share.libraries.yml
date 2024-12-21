@@ -1,0 +1,10 @@
+better_social_share.front:
+  version: VERSION
+  js:
+    js/better_social_share.js: { }
+  css:
+    theme:
+      css/better_social_share.css: { }
+  dependencies:
+    - core/jquery
+    - core/drupal

@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Module file for Sociaux.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function sociaux_theme() {
+  return [
+    'sociaux' => [
+      'variables' => [
+        'links' => [],
+      ],
+      'template' => 'sociaux',
+    ],
+  ];
+}

@@ -1,0 +1,7 @@
+name: 'Social Media Configuration'
+type: module
+description: 'Provides configuration for social media links.'
+package: Custom
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:config

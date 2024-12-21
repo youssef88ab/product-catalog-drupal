@@ -1,0 +1,5 @@
+social.admin_settings:
+  title: 'social media config buttons'
+  parent: system.admin_config_services
+  description: 'Configure Social Media buttons.'
+  route_name: social.admin_settings

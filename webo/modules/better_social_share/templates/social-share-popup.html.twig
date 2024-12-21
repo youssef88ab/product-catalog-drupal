@@ -1,0 +1,28 @@
+<div id="better-social-share-popup-reg" class="better-social-share-popup">
+  <div class="better-social-share-popup-container" data-link="" data-title="">
+    <div class="better-social-share-popup-content">
+      <div id="better-social-share_sharing_more_providers">
+        <button id="better-social-share_sharing_popup_close" class="close-button better-social-share-popup-close">
+          <img src="{{ file_url(close_icon) }}"></button>
+          <div id="better-social-share_sharing_more_content">
+            <div class="better-social-share-filter">
+              <input type="text" onkeyup="heateorSsspFilterSharing(this.value.trim())" placeholder="Search" class="social-share-search"></div>
+              <div class="better-social-share-all-services">
+                <ul class="better-social-share-mini">
+                  {% set entity_url = entity_url is defined and entity_url is not empty? entity_url : '$share_link' %}
+                  {% set entity_title = entity_title is defined and entity_title is not empty? entity_title : '$title' %}
+                  {% for key, platform in platforms %}
+                    <li>
+                     {% include '@better_social_share/templates/template-parts/' ~ key ~ '.html.twig' with { platform_key: key, entity_url:entity_url, entity_title:entity_title } %}
+                    </li>
+                  {% endfor %}
+                </ul>
+                <input type="hidden" class="social-share-copy" value=""></div>
+                <div class="footer-panel">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

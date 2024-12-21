@@ -1,0 +1,42 @@
+# Schema for the configuration files of the Social Media Platforms module.
+social_media_platforms.settings:
+  type: config_object
+  label: 'Social Media Platforms settings'
+  mapping:
+
+    display_options:
+      type: mapping
+      label: 'Display options'
+      mapping:
+        show_icon:
+          type: boolean
+          label: 'Show icon'
+
+        show_label:
+          type: boolean
+          label: 'Show label'
+
+        target_blank:
+          type: boolean
+          label: 'Open link in new tab'
+
+    platforms:
+      type: sequence
+      label: 'Available platforms'
+      orderby: key
+      sequence:
+        type: mapping
+        mapping:
+
+          label:
+            type: label
+            label: 'Platform label'
+
+          url:
+            type: uri
+            label: 'Platform url'
+
+          weight:
+            type: integer
+            label: 'Weight'
+

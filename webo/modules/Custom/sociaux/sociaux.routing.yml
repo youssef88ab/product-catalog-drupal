@@ -1,0 +1,7 @@
+sociaux.settings:
+  path: '/admin/config/system/sociaux'
+  defaults:
+    _title: 'Sociaux Settings'
+    _form: 'Drupal\sociaux\Form\SociauxSettingsForm'
+  requirements:
+    _permission: 'administer sociaux configuration'

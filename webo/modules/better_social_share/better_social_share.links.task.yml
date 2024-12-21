@@ -1,0 +1,4 @@
+better_social_share.admin_settings_tab:
+  route_name: better_social_share.admin_settings
+  title: Settings
+  base_route: better_social_share.admin_settings

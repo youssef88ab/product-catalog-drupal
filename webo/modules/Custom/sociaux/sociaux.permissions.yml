@@ -1,0 +1,3 @@
+administer sociaux configuration:
+  title: 'Administer Sociaux configuration'
+  restrict access: TRUE

@@ -1,0 +1,36 @@
+name: "Mon Thème"
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: false
+description: "Un thème personnalisé pour mon site Drupal."
+package: Custom
+version: VERSION
+libraries:
+  - montheme/global-styling
+  - montheme/test_css_js
+
+core: 9.x
+regions:
+  header: Header
+  primary_menu: "Primary menu"
+  secondary_menu: "Secondary menu"
+  hero: "Hero (full width)"
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  content_above: Content Above
+  content: Content
+  sidebar: "Sidebar"
+  content_below: "Content Below"
+  footer_top: "Footer Top"
+  footer_bottom: "Footer Bottom"
+stylesheets:
+  all:
+    - css/bootstrap-theme.css
+    - css/bootstrap-theme.css
+    - css/bootstrap.min.css
+    - css/bootstrap-theme.css
+    - fonts/font-awesome/css/font-awesome.min.css
+    - css/main.css
+    - css/responsive.css
+    - css/calendar.css

@@ -1,0 +1,14 @@
+name: Better Social Share
+type: module
+description: 'Enables your website visitors to easily share your content on Facebook, Twitter, Google, LinkedIn, WhatsApp, Tumblr, Pinterest, and over 100 other social platforms.'
+package: Better Social Share
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - drupal:node
+  - drupal:block
+configure: better_social_share.admin_settings
+
+# Information added by Drupal.org packaging script on 2024-04-26
+version: '1.1.2'
+project: 'better_social_share'
+datestamp: 1714119252

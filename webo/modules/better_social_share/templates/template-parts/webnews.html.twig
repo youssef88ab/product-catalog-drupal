@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Webnews')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Webnews'|t }}" data-link="https://www.webnews.de/login" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Webnews'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M6 6h5.48v14.557h1.844V6h5.396v14.557h1.852V6H26v18.196h-1.82V26h-7.25v-1.825h-1.838V26h-7.25v-1.825H6V6z"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Webnews'|t }}
+    </span>
+</a>

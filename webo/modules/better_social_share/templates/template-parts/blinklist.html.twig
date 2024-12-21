@@ -1,0 +1,14 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Blinklist')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Blinklist'|t }}" data-link="https://blinklist.com/blink?t={{ entity_title }}&amp;d=&amp;u={{ entity_url }}%2F" href="javascript:void(0)">
+        <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Blinklist'|t }}">
+                <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+                        <g fill="{{ icon_color|default('#fff') }}">
+                                <path d="M3 10.35v11.3l8.977-5.418"></path>
+                                <path d="M17.55 27.454c-4.397 0-8.314-2.39-10.205-6.36l1.675-1.04c1.558 3.274 4.906 5.388 8.53 5.388 5.204 0 9.438-4.235 9.438-9.44 0-5.208-4.233-9.443-9.44-9.443-3.804 0-7.22 2.26-8.7 5.763l-1.733-1.057c1.798-4.25 5.82-6.72 10.434-6.72C23.86 4.546 29 9.683 29 15.996c0 6.317-5.136 11.457-11.45 11.457z"></path>
+                                <path d="M11.425 18.623c1.02 2.406 3.403 4.09 6.18 4.09 3.71 0 6.715-3.006 6.715-6.712 0-3.71-3.005-6.712-6.714-6.712-2.887 0-5.35 1.823-6.295 4.38l3.958 2.566-3.84 2.39z"></path>
+                        </g>
+                </svg>
+        </span>
+        <span class="social-media-share-label">
+                {{ 'Blinklist'|t }}
+        </span>
+</a>

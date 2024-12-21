@@ -1,0 +1,13 @@
+# Schema for the views_split plugin.
+
+views.style.splitview:
+  type: views.style.default
+  label: 'Split view'
+  mapping:
+    view_mode:
+      type: string
+    first_x_value:
+      type: integer
+    first_page_only:
+      type: boolean
+

@@ -1,0 +1,16 @@
+better_social_share.admin_settings:
+  path: '/admin/config/services/better-social-share'
+  defaults:
+    _form: '\Drupal\better_social_share\Form\BetterSocialShareSettingsForm'
+    _title: 'Better Social Share Configuration'
+  requirements:
+    _permission: 'administer better_social_share'
+
+better_social_share.ajax:
+  path: '/better-social-share/get-popup'
+  defaults:
+    _controller: '\Drupal\better_social_share\Controller\SocialShareController::ajaxCallback'
+    _title: 'Popup Ajax'
+  requirements:
+    # Allow access, because anybody is allowed to access popup
+    _access: 'TRUE'

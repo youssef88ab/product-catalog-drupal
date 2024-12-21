@@ -1,0 +1,13 @@
+name: Image Hover Effects
+type: module
+description: Extends the Image formatter by adding an option select and configure an image hover effect.
+package: Sooperthemes
+core_version_requirement: ^8.8 || ^9 || ^10
+dependencies:
+  - drupal:image
+  - drupal:responsive_image
+
+# Information added by Drupal.org packaging script on 2024-02-23
+version: '2.0.1'
+project: 'image_hover_effects'
+datestamp: 1708692823

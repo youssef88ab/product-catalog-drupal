@@ -1,0 +1,12 @@
+name: Sociaux
+type: module
+description: Show social media links in a block.
+package: Other
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+
+configure: sociaux.settings
+
+# Information added by Drupal.org packaging script on 2024-07-25
+version: '2.0.1'
+project: 'sociaux'
+datestamp: 1721903974

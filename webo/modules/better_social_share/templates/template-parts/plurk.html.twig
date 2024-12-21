@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Plurk')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Plurk'|t }}" data-link="https://www.plurk.com/m?content={{ entity_url }}%2F&amp;qualifier=shares" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Plurk'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M20.215 16.016h-8.43V9.7h8.43v6.316zm4.2 4.2V5.5H7.585v21h4.2v-6.285h12.63z"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Plurk'|t }}
+    </span>
+</a>

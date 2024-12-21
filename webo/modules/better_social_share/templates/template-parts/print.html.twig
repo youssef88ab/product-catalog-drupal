@@ -1,0 +1,12 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Print')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Print'|t }}" data-link="https://www.printfriendly.com/print?url={{ entity_url }}%2F" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Print'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-2.5 -4.5 35 35">
+            <path stroke="#fff" d="M 7 10 h 2 v 3 h 12 v -3 h 2 v 7 h -2 v -3 h -12 v 3 h -2 z" stroke-width="1" fill="{{ icon_color|default('#fff') }}"></path>
+            <rect stroke="#fff" stroke-width="1.8" height="7" width="10" x="10" y="5" fill="none"></rect>
+            <rect stroke="#fff" stroke-width="1" height="5" width="8" x="11" y="16" fill="{{ icon_color|default('#fff') }}"></rect>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Print'|t }}
+    </span>
+</a>

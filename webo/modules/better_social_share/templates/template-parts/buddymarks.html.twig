@@ -1,0 +1,17 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('BuddyMarks')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'BuddyMarks'|t }}" data-link="http://buddymarks.com/login.php?bookmark_title={{ entity_title }}&amp;bookmark_url={{ entity_url }}%2F&amp;bookmark_desc=&amp;bookmark_tags=" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'BuddyMarks'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <g fill="{{ icon_color|default('#fff') }}">
+                <circle cx="19.587" cy="7.172" r="4.209"></circle>
+                <path d="M21.374 11.668h-3.572c-.085 0-.168.01-.253.013.32.68.51 1.437.51 2.236 0 1.476-.62 2.807-1.61 3.756 2.314.69 4.084 2.656 4.486 5.08 3.414-.15 5.382-1.114 5.513-1.18l.282-.145h.03V17.06c0-2.97-2.418-5.39-5.39-5.39z"></path>
+            </g>
+            <g fill="{{ icon_color|default('#fff') }}">
+                <circle cx="12.413" cy="13.439" r="4.209"></circle>
+                <path d="M14.198 17.937h-3.57c-2.973 0-5.39 2.417-5.39 5.388v4.37l.01.067.303.095c2.838.885 5.3 1.18 7.33 1.18 3.96 0 6.257-1.13 6.398-1.2l.282-.142h.027v-4.37c0-2.97-2.416-5.388-5.388-5.388z"></path>
+            </g>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'BuddyMarks'|t }}
+    </span>
+</a>

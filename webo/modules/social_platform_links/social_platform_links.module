@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Contains social_platform_links.module.
+ */
+
+//include_once DRUPAL_ROOT. '/includes/bootstrap.inc';
+
+/**
+ * Implements hook_library_info().
+ */
+function social_platform_links_library_info() {
+  $libraries['social_platform_links'] = [
+    'title' => 'Social Platform Links',
+    'css' => [
+      'theme' => [
+        'css/social_platform_links.css' => [],
+      ],
+    ],
+  ];
+  return $libraries;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function social_platform_links_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'social_platform_links/social_platform_links';
+}

@@ -1,0 +1,26 @@
+{
+  "name": "drupal/image_hover_effects",
+  "description": "Field Formatter that adds a hover effect to a linked image.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "keywords": ["Drupal"],
+  "homepage": "https://www.drupal.org/project/image_hover_effects",
+  "authors": [
+    {
+      "name": "JurriaanRoelofs",
+      "homepage": "https://www.drupal.org/u/jurriaanroelofs",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Viktor Holovachek (AstonVictor)",
+      "homepage": "https://www.drupal.org/u/astonvictor",
+      "role": "Maintainer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/image_hover_effects",
+    "source": "https://git.drupalcode.org/project/image_hover_effects"
+  },
+  "require": { }
+}

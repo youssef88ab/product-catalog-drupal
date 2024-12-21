@@ -1,0 +1,10 @@
+<a class="social-link social-link-{{ platform_key }}" rel="nofollow" title="{{ ('Pusha')|t }}" {% if btn_bg_color %}style="background-color:{{ btn_bg_color }}"{% endif %} alt="{{ 'Pusha'|t }}" data-link="https://www.pusha.se/posta?url={{ entity_url }}%2F" href="javascript:void(0)">
+    <span class="better-social-share-svg" style="width:{{ buttons_size??'22' }}px;height:{{ buttons_size??'22' }}px;" title="{{ 'Pusha'|t }}">
+        <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 32 32">
+            <path fill="{{ icon_color|default('#fff') }}" d="M29.27 22.188V8.068L17.207 14.92l3.838 2.33C15.715 24.144 5.898 29.306 0 31.964V32h19.635c3.682-4.865 7.03-11.46 7.03-11.46l2.604 1.648z"></path>
+        </svg>
+    </span>
+    <span class="social-media-share-label">
+        {{ 'Pusha'|t }}
+    </span>
+</a>

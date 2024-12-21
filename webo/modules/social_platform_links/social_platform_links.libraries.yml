@@ -1,0 +1,5 @@
+social_platform_links:
+  version: 1.x
+  css:
+    theme:
+      css/social_platform_links.css: {}

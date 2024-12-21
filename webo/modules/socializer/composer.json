@@ -1,0 +1,20 @@
+{
+    "name": "drupal/socializer",
+    "description": "Show social media links in a block.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.drupal.org/project/socializer",
+    "authors": [
+        {
+            "name": "ramns",
+            "homepage": "https://www.drupal.org/user/3340380"
+        }
+    ],
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/socializer",
+        "source": "https://git.drupalcode.org/project/socializer"
+    },
+    "require": {
+        "drupal/core": "^8 || ^9 || ^10 || ^11"
+    }
+}
